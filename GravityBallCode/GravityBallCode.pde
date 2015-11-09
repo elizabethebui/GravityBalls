@@ -1,5 +1,5 @@
 //declare variables
-float x, y, velX, velY, diam;
+float x, y, velX, velY, diam, g;
 
 void setup() {
   //set size of canvas
@@ -11,6 +11,7 @@ void setup() {
   diam = 80;
   velX = random(-5, 5);
   velY = random(-5, 5);
+  g = 1;
 }
 
 void draw() {
@@ -21,8 +22,11 @@ void draw() {
   ellipse(x, y, diam, diam);
 
   //add velocity to position
+   velY += g;
   x += velX;
   y += velY;
+
+
 
   //bounce ball if it hits walls
   if (x + diam/2 >= width) {
