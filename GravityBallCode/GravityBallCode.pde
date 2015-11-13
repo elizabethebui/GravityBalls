@@ -26,8 +26,14 @@ void draw() {
   //draw background to cover previous frame
   background(0);
   for(int i = 0; i<count; i++){
+    if(dist(x[i], y[i], mouseX, mouseY) < diam[i]/2){
+      ellipse(x[i], y[i], 200, 200);
+      fill(random(255));
+  }
   //draw ball
   ellipse(x[i], y[i], diam[i], diam[i]);
+  stroke(255,0,255);
+  fill(255,0,255,50);
 
   //add velocity to position
   velY[i] += g;
